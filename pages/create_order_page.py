@@ -7,10 +7,10 @@ class CreateOrderPage:
     CREATE_ORDER_BUTTON_IN_HEADER = [By.XPATH, './/button[text()="Заказать"]']
     CREATE_ORDER_BUTTON_ON_BOTTOM = [By.XPATH, './/button[@class="Button_Button__ra12g Button_UltraBig__UU3Lp"]']
     CREATE_ORDER_HEADER = [By.XPATH, './/div[text()="Для кого самокат"]']
-    NAME_FIELD = [By.XPATH, './/div[@class="Order_Form__17u6u"]/div[1]/input']
-    SURNAME_FIELD = [By.XPATH, './/div[@class="Order_Form__17u6u"]/div[2]/input']
-    ADDRESS_FIELD = [By.XPATH, './/div[@class="Order_Form__17u6u"]/div[3]/input']
-    METRO_SELECT = [By.XPATH, './/div[@class="Order_Form__17u6u"]/div[4]//input']
+    NAME_FIELD = [By.XPATH, './/div[@class="Order_Form__17u6u"]//input[@placeholder="* Имя"]']
+    SURNAME_FIELD = [By.XPATH, './/div[@class="Order_Form__17u6u"]//input[@placeholder="* Фамилия"]']
+    ADDRESS_FIELD = [By.XPATH, './/div[@class="Order_Form__17u6u"]//input[@placeholder="* Адрес: куда привезти заказ"]']
+    METRO_SELECT = [By.XPATH, './/div[@class="Order_Form__17u6u"]//input[@placeholder="* Станция метро"]']
     METRO_SELECT_CHERKIZOVSKAYA = [By.XPATH,
                                   './/div[@class="Order_Form__17u6u"]/div[4]//button/div[text()="Черкизовская"]']
     METRO_SELECT_SOKOLNIKI = [By.XPATH,
@@ -24,7 +24,7 @@ class CreateOrderPage:
     DAYS_FOR_RENT_FOR_GREY_SCOOTER_SELECT = [By.XPATH, './/div[@class="Dropdown-menu"]/div[text()="трое суток"]']
     SCOOTER_COLOR_BLACK_SELECT = [By.ID, 'black']
     SCOOTER_COLOR_GREY_SELECT = [By.ID, 'grey']
-    COMMENT = [By.XPATH, './/div[@class="Order_Form__17u6u"]/div[4]/input']
+    COMMENT = [By.XPATH, './/div[@class="Order_Form__17u6u"]//input[@placeholder="Комментарий для курьера"]']
     PUBLISH_ORDER_BUTTON = [By.XPATH, './/div[@class="Order_Buttons__1xGrp"]/button[text()="Заказать"]']
     CONFIRMATION_BUTTON = [By.XPATH, './/button[text()="Да"]']
     ORDER_CREATED_HEADER = [By.XPATH, './/div[@class="Order_ModalHeader__3FDaJ"]']
