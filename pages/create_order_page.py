@@ -75,6 +75,11 @@ class CreateOrderPage:
         WebDriverWait(self.driver, 3).until(expected_conditions.element_to_be_clickable((
             self.YANDEX_LOGO))).click()
 
+    def get_to_bottom_order_creation_button(self):
+        element = WebDriverWait(self.driver, 3).until(expected_conditions.element_to_be_clickable((
+            self.CREATE_ORDER_BUTTON_ON_BOTTOM)))
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+
     def fill_about_rent_form_black_scooter(self, date, comment):
         WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located((
             self.ABOUT_RENT_HEADER)))
@@ -119,7 +124,8 @@ class CreateOrderPage:
     def check_creation_order_by_clicking_on_bottom_order_button(
             self, name, surname, address, phone_number, date, carrier_comment
     ):
-        self.click_on_create_order_button_in_header()
+        self.get_to_bottom_order_creation_button()
+        self.click_on_create_order_button_on_bottom()
         self.fill_name_field(name)
         self.fill_surname_field(surname)
         self.fill_address_field(address)
