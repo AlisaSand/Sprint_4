@@ -1,6 +1,6 @@
 from faker import Faker
 from datetime import datetime, timedelta
-from pages.create_order_page import CreateOrderPage
+from pages.create_order_page import CreateOrderAction
 
 fake = Faker("ru_RU")
 
@@ -19,7 +19,7 @@ class TestOrderCreation:
         year = datetime.year
         date = str(day) + "." + str(month) + "." + str(year)
         carrier_comment = fake.first_name()
-        create_order_page = CreateOrderPage(driver)
+        create_order_page = CreateOrderAction(driver)
         create_order_page.check_creation_order_by_clicking_on_order_button_in_header(
             name, surname, address, phone_number, date, carrier_comment
         )
@@ -37,15 +37,15 @@ class TestOrderCreation:
         year = datetime.year
         date = str(day) + "." + str(month) + "." + str(year)
         carrier_comment = fake.first_name()
-        create_order_page = CreateOrderPage(driver)
+        create_order_page = CreateOrderAction(driver)
         create_order_page.check_creation_order_by_clicking_on_bottom_order_button(
             name, surname, address, phone_number, date, carrier_comment
         )
 
     def test_main_scooter_page_is_open_by_clicking_on_scooter_logo(self, driver):
-        create_order_page = CreateOrderPage(driver)
+        create_order_page = CreateOrderAction(driver)
         create_order_page.check_main_scooter_page_appeared_after_clicking_on_scooter_logo()
 
     def test_yandex_page_is_open_by_clocking_on_yandex_logo(self, driver):
-        create_order_page = CreateOrderPage(driver)
+        create_order_page = CreateOrderAction(driver)
         create_order_page.check_main_yandex_page_appeared_after_clicking_on_yandex_logo()
